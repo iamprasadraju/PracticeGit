@@ -47,11 +47,11 @@ ___
     git status
 ```
 
-<quote>
+<blockquote>
     On branch main
     No commits yet
     nothing to commit (create/copy files and use "git add" to track)
-</quote>
+</blockquote>
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 Then check **git status**
 
-<quote>
+<blockquote>
     On branch main
 
     No commits yet
@@ -77,7 +77,7 @@ Then check **git status**
    	guacamole.md
 
     nothing added to commit but untracked files present (use "git add" to track)
-</quote>
+</blockquote>
 
 ___
 
@@ -87,13 +87,13 @@ ___
     git commit -m "<commit messages"
 ```
 
-<quote>
+<blockquote>
     Example:
 
     [main (root-commit) af6f22b] Initial commit
     1 file changed, 81 insertions(+)
     create mode 100644 README.md
-</quote>
+</blockquote>
 
 ![gitworkflow img](https://swcarpentry.github.io/git-novice/fig/git-staging-area.svg)
 
@@ -101,7 +101,7 @@ If we modified any tracked file -> It will show *modified:<file>*
 
 Check the difference/modified content by ```git diff <file>``` or ```git diff``` for all modified content in that Repository. ```git diff --staged``` for staged files.
 
-<quote>
+<blockquote>
     diff --git a/guacamole.md b/guacamole.md
     index 315bf3a..b36abfd 100644
     --- a/guacamole.md
@@ -114,7 +114,7 @@ Check the difference/modified content by ```git diff <file>``` or ```git diff```
     +* lime
     * salt
     ## Instructions
-</quote>
+</blockquote>
 
 
 We can look at history of repo (just like logs):
@@ -123,7 +123,7 @@ We can look at history of repo (just like logs):
     git log
 ```
 
-<quote>
+<blockquote>
     Example:
 
     commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -> main)
@@ -143,7 +143,7 @@ We can look at history of repo (just like logs):
     Date:   Thu Aug 22 09:51:46 2013 -0400
 
         Create initial structure for a Guacamole recipe
-</quote>
+</blockquote>
 
 Useful code:
 
@@ -174,7 +174,7 @@ Note that HEAD is the default option for git diff, so omitting it will not chang
     git diff HEAD~1 <file>
 ```
 
-<quote>
+<blockquote>
     diff --git a/guacamole.md b/guacamole.md
     index df0654a..b36abfd 100644
     --- a/guacamole.md
@@ -186,7 +186,7 @@ Note that HEAD is the default option for git diff, so omitting it will not chang
     +* lime
     +* salt
     ## Instructions
-</quote>
+</blockquote>
 
 We could also use git show which shows us what changes we made at an older commit as well as the commit message, rather than the differences between a commit and our working directory that we see by using git diff.
 
@@ -194,7 +194,7 @@ We could also use git show which shows us what changes we made at an older commi
     git show HEAD~2 guacamole.md
 ```
 
-<quote>
+<blockquote>
     commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
     Author: Alfredo Linguini <a.linguini@ratatouille.fr>
     Date:   Thu Aug 22 10:07:21 2013 -0400
@@ -210,7 +210,7 @@ We could also use git show which shows us what changes we made at an older commi
     +# Guacamole
     +## Ingredients
     +## Instructions
-</quote>
+</blockquote>
 
 ___
 
@@ -249,10 +249,10 @@ The only thing Git notices now is the newly-created ```.gitignore``` file. You m
     git status
 ```
 
-<quote>
+<blockquote>
     On branch main
     nothing to commit, working tree clean
-</quote>
+</blockquote>
 
 If we really want to override our ignore settings, we can use git add -f to force Git to add something. For example, git add -f a.png. We can also always see the status of ignored files if we want:
 
