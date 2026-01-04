@@ -8,7 +8,7 @@ For help:
     git help
 ```
 
-1. Setting up Git
+### 1. Setting up Git
 
 Before that, For check
 
@@ -28,7 +28,7 @@ Before that, For check
 ```
 ___
 
-2.  Creating a Repository (local)
+### 2.  Creating a Repository (local)
 
 ```bash
     mkdir <projectname>
@@ -41,7 +41,7 @@ ___
 
 ___
 
-3. Tracking Changes
+### 3. Tracking Changes
 
 ```bash
     git status
@@ -56,7 +56,7 @@ ___
 ___
 
 
-4. Adding a file to track
+### 4. Adding a file to track
 
     Create a file ```README.md```
 
@@ -81,7 +81,7 @@ Then check **git status**
 
 ___
 
-5. Writing commit messages
+### 5. Writing commit messages
 
 ```bash
     git commit -m "<commit messages"
@@ -162,7 +162,7 @@ Useful code:
 
 ___
 
-6. Exploring History
+### 6. Exploring History
 
 ```bash
     git diff HEAD <file>
@@ -214,7 +214,7 @@ We could also use git show which shows us what changes we made at an older commi
 
 ___
 
-7. Restore a file
+### 7. Restore a file
 
 ```bash
     git restore <file>
@@ -239,7 +239,7 @@ git diff and git log are very useful and they summarize a different part of the 
 ```
 ___
 
-8. Ignoring Things
+### 8. Ignoring Things
 
 The only thing Git notices now is the newly-created ```.gitignore``` file. You might think we wouldn’t want to track it, but everyone we’re sharing our repository with will probably want to ignore the same things that we’re ignoring. Let’s add and commit ```.gitignore```:
 
@@ -264,3 +264,27 @@ Adding ignored file forcely ```git add -f <file>```
 ___
 
 
+### 9. Remotes in github
+
+- Create a remote repository at [Github](https://github.com/new)
+
+- Connect local to remote repository (https) -> ```git remote add orgin <repo url>```
+
+We can check that the command has worked by running ```git remote -v```:
+
+```bash
+    git remote -v
+```
+
+- Push local changes to a remote
+
+```bash
+    git push origin main
+```
+
+![img](https://swcarpentry.github.io/git-novice/fig/github-repo-after-first-push.svg)
+
+
+<blockquote>
+    You may see a `-u` option used with `git push` in some documentation. This option is synonymous with the `--set-upstream-to` option for the `git branch` command, and is used to associate the current branch with a remote branch so that the `git pull`command can be used without any arguments. To do this, simply use `git push -u origin main` once the remote has been set up.
+</blockquote>
