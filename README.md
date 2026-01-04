@@ -288,3 +288,65 @@ We can check that the command has worked by running ```git remote -v```:
 <blockquote>
     You may see a `-u` option used with `git push` in some documentation. This option is synonymous with the `--set-upstream-to` option for the `git branch` command, and is used to associate the current branch with a remote branch so that the `git pull`command can be used without any arguments. To do this, simply use `git push -u origin main` once the remote has been set up.
 </blockquote>
+
+
+### 10. Branching & Merging
+
+Fuck Notes !
+
+Follow the [link](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
+
+
+![branch-1](https://git-scm.com/book/en/v2/images/basic-branching-1.png)
+
+```bash
+    git branch iss53
+    git checkout iss53
+
+        // or
+
+    git checkout -b iss53
+
+```
+
+![branch-2](https://git-scm.com/book/en/v2/images/basic-branching-2.png)
+
+
+```bash
+    vim index.html
+    git commit -a -m "Create new footer [issue 53]'"
+```
+
+![branch-3](https://git-scm.com/book/en/v2/images/basic-branching-3.png)
+
+
+```bash
+    git checkout master
+    Switched to branch 'master'
+```
+
+
+Next, you have a hotfix to make. Let’s create a hotfix branch on which to work until it’s completed:
+
+
+```bash
+    git checkout -b hotfix
+     - Switched to a new branch 'hotfix'
+    vim index.html
+    git commit -a -m 'Fix broken email address'
+    - [hotfix 1fb7853] Fix broken email address
+    - 1 file changed, 2 insertions(+)
+```
+
+![branch-3](https://git-scm.com/book/en/v2/images/basic-branching-4.png)
+
+```bash
+    git checkout master
+    git merge hotfix
+    - Updating f42c576..3a0874c
+    - Fast-forward
+    - index.html | 2 ++
+    - 1 file changed, 2 insertions(+)
+```
+
+![branch-4](https://git-scm.com/book/en/v2/images/basic-branching-5.png)
