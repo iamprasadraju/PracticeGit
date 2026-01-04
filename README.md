@@ -26,7 +26,7 @@ Before that, For check
 ```bash
     git config --global core.editor "vim"
 ```
-
+___
 
 2.  Creating a Repository (local)
 
@@ -39,6 +39,7 @@ Before that, For check
 ```
 .git dir is created, it stores all the history
 
+___
 
 3. Tracking Changes
 
@@ -51,6 +52,9 @@ Before that, For check
     No commits yet
     nothing to commit (create/copy files and use "git add" to track)
 </quote>
+
+___
+
 
 4. Adding a file to track
 
@@ -75,6 +79,7 @@ Then check **git status**
     nothing added to commit but untracked files present (use "git add" to track)
 </quote>
 
+___
 
 5. Writing commit messages
 
@@ -155,6 +160,7 @@ Useful code:
 
 ![github workflow](https://swcarpentry.github.io/git-novice/fig/git-committing.svg)
 
+___
 
 6. Exploring History
 
@@ -189,7 +195,11 @@ We could also use git show which shows us what changes we made at an older commi
 ```
 
 <quote>
-    Create a template for recipe
+    commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
+    Author: Alfredo Linguini <a.linguini@ratatouille.fr>
+    Date:   Thu Aug 22 10:07:21 2013 -0400
+
+        Create a template for recipe
 
     diff --git a/guacamole.md b/guacamole.md
     new file mode 100644
@@ -201,3 +211,56 @@ We could also use git show which shows us what changes we made at an older commi
     +## Ingredients
     +## Instructions
 </quote>
+
+___
+
+7. Restore a file
+
+```bash
+    git restore <file>
+```
+
+As you might guess from its name, ```git restore``` restores an old version of a file. By default, it recovers the version of the file recorded in HEAD, which is the last saved commit. If we want to go back even further, we can use a commit identifier instead, using -s option:
+
+```bash
+    git restore -s <commit_id> <file>
+```
+
+![githubworkflow-img](https://swcarpentry.github.io/git-novice/fig/git-restore.svg)
+
+So, to put it all together, here’s how Git works in cartoon form:
+
+![img](https://swcarpentry.github.io/git-novice/fig/git_staging.svg)
+
+git diff and git log are very useful and they summarize a different part of the history for you. Is it possible to combine both? Let’s try the following:
+
+```bash
+    git log --patch <file>
+```
+___
+
+8. Ignoring Things
+
+The only thing Git notices now is the newly-created ```.gitignore``` file. You might think we wouldn’t want to track it, but everyone we’re sharing our repository with will probably want to ignore the same things that we’re ignoring. Let’s add and commit ```.gitignore```:
+
+```bash
+    git add .gitignore
+    git commit -m "Ignore png files and the pictures folder."
+    git status
+```
+
+<quote>
+    On branch main
+    nothing to commit, working tree clean
+</quote>
+
+If we really want to override our ignore settings, we can use git add -f to force Git to add something. For example, git add -f a.png. We can also always see the status of ignored files if we want:
+
+Adding ignored file forcely ```git add -f <file>```
+
+```bash
+    git status --ignored
+```
+___
+
+
